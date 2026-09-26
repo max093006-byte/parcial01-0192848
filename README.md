@@ -108,3 +108,31 @@ Construya un programa que:
 Entregue los dos archivos `.java`, debidamente nombrados y capaces de compilar y ejecutarse sin errores.
 
 **Analice primero y programe después. Java ejecuta exactamente lo escrito, incluso cuando la idea iba por otro camino.**
+
+## Solucion del ejercicio1
+El programa resuelve la gestión de datos del centro de distribución mediante un arreglo de 10 posiciones. Su funcionamiento se divide en tres etapas principales:
+
+- 1. Leer y Validar los Datos: Se utiliza un bucle for para solicitar la cantidad de paquetes procesados en cada una de las 10 horas. Para garantizar que los datos sean solo numeros positivos, se implementa una validación con do-while y Scanner que impide el ingreso de valores negativos o caracteres que no sean numeros. Durante la lectura, se acumula la suma total de los paquetes.
+
+- 2. Cálculos y Procesamiento:
+
+Promedio y Mínimo: Se calcula el promedio dividiendo el total acumulado entre las 10 horas.
+
+Conteo: Mediante un segundo recorrido, se compara el valor de cada hora con el promedio. Si es inferior, se incrementa el contador de horas por debajo de la media y se suma a una racha activa. Si la racha actual supera a la racha máxima registrada, esta se actualiza; de lo contrario, la racha se reinicia a cero al encontrar una hora con producción igual o superior al promedio.
+
+Finalmente, el programa imprime una tabla formateada con la producción detallada de cada hora y un panel de estadísticas finales con el total de paquetes, el promedio por hora, la hora de menor rendimiento, el número de horas con baja producción y la racha consecutiva más larga.
+
+## Solucion del ejercicio2
+El programa resuelve el análisis de ventas mediante una matriz bidimensional de 4x5 (int[4][5]), combinada con arreglos auxiliares para almacenar acumulados. Su ejecución consta de tres partes principales:
+
+- 1. Leer y Validar la Matriz: Se recorre la matriz celda por celda mediante ciclos for anidados. En cada iteración se aplica una estructura de validación con do-while y Scanner para garantizar que la entrada sea de tipo entero y no contenga valores negativos.
+
+- 2. Cálculos y Procesos:
+
+Suma por Filas (Sucursales): Se itera fijando la fila para sumar los productos de cada sucursal y se guarda el total en un arreglo. En el mismo paso se evalúa con el operador < cuál es la sucursal con menor ventas, conservando la primera registrada en caso de empate.
+
+Suma por Columnas (Productos): Se invierte el orden de iteración fijando la columna para calcular el total de unidades por producto. Mediante el operador > se identifica el producto con mayor unidades vendidas.
+
+Evaluación de Filtro: Se efectúa un recorrido completo de la matriz contando cuántas celdas registraron una cantidad estrictamente mayor a 30.
+
+- 3. Impresión de la Matriz y Resumen: Finalmente, se presenta en consola la matriz formateada con alineación tabular, agregando los totales acumulados por fila y columna, así como el cuadro estadístico resumen.
